@@ -40,9 +40,6 @@ def update(request, pk):
             data1.save()
             return redirect('home')  # Redirect to the home page
 
-        elif action == 'delete':
-            return redirect('delete', pk1=pk)
-
     context = {
         'data1': data1
         }
