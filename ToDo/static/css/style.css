@@ -82,18 +82,23 @@ ul a li{
 }
 
 li {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between text and icon */
+  align-items: center; /* Vertically center content */
   list-style: none;
   font-size: 18px;
   cursor: pointer;
   padding: 10px;
-  text-align: center;
+  text-align: left; /* Align text to the left */
   background: #edeef0;
   margin-bottom: 10px;
   border-radius: 5px;
-  width: 70%;
-  display: flex;
-  justify-content: center;  /* Ensures content is centered within li */
-  align-items: center;  /* Vertically centers content in li */
+  width: 57%;
+}
+
+li a {
+  flex-grow: 1; /* Make the link take up most of the space */
+  padding-left: 7px;
 }
 
 a {
