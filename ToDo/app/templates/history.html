@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do List</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         ul{
             display: flex;
@@ -22,8 +23,16 @@
             background: #edeef0;
             margin-bottom: 10px;
             border-radius: 5px;
-            width: 60%;
+            width: 56%;
             display: flex;
+        }
+
+        .image-container button{
+            margin-right: 8px;
+        }
+
+        .image-container button:hover{
+            color: red;
         }
 
     </style>
@@ -44,7 +53,7 @@
                 <span>{{i.dtask}}</span>
                 <div class="image-container">
                     <button type="submit" style="background: none; border: none; cursor: pointer;">
-                        <img src="{% static 'images/delete.png' %}" alt="Delete" height="18px" width="18px" align="center">
+                        <i id="del" class="fa-solid fa-trash"></i>
                     </button>
                 </div>
             </li>
