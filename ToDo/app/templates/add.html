@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .todo-body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            /* border: 2px solid red; */
+        }
+        .todo-body input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: #edeef0;
+            padding: 15px;
+            font-size: 20px;
+            border-radius: 20px;
+            width: 80%;
+        }
+
+        .todo-body button{
+            border-radius: 28px;
+            padding: 14px;
+            font-size: 18px;
+            width: 28%;
+        }
+
+        .todo-body button:hover{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'home' %}"><img src="{% static 'images/left-arrow.png' %}" alt="" height="25px" width="24px"></a>
+        <div class="header">
+            <h2>ToDo List</h2>
+            <img src="{% static 'images/check-list.png' %}" alt="" height="45px">
+        </div>
+        <form action="" method="POST">
+            {% csrf_token %}
+        <div class="todo-body">
+            <input type="text" class="todo-input" placeholder="Add Your Task" name="task"/>
+            <button type="submit">Create</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

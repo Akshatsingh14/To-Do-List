@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .search{
+            width: 100%; 
+            display: flex;
+            border-radius: 30px;
+            background: #edeef0;
+        }
+
+        .search input{
+            border: none;
+            outline: none;
+            display: flex;
+            width: 90%;
+            border-radius: 30px;
+            align-items: center;
+            padding-left: 15px;
+            background-color: #edeef0;
+            gap: 5px;
+            padding: 12px;
+            font-size: 20px;
+        }
+
+        .search input+button{
+            border-radius: 40px;
+            margin-right: 12px;
+            margin-top: 4px;
+            height: 45px;
+            border: none;
+            /* border: 2px solid red; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>ToDo List</h2>
+            <img src="{% static 'images/check-list.png' %}" alt="" height="45px">
+        </div>
+        <div class="todo-body" style="gap:10px">
+            <a href="{% url 'create' %}"><span>
+                <p>Create</p>
+                <img src="{% static 'images/plus.png' %}" alt="">
+            </span></a>
+            <a href="{% url 'hist' %}"><span>
+                <p>History</p>
+                <img src="{% static 'images/history.png' %}" alt="">
+            </span></a>
+            <form action="" method="GET">
+                {% csrf_token %}
+            <div class="search">
+                <input type="text" name="search" placeholder="Search Task"></input>
+                <button type="submit"><img src="{% static 'images/search.png' %}" alt="" 
+                    style="cursor: pointer; height: 30px; width: 30px;"></button>
+            </div>
+            </form>
+        </div>
+        
+        {% for i in data %}            
+        <ul id="list-items" class="list-items">
+            <a href="{% url 'update' i.id %}">
+                <li>{{i.task}}</li>
+            </a>
+        </ul>
+        {% endfor %}
+    </div>
+</body>
+</html>

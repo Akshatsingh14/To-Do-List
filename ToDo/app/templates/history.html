@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        li {
+            list-style: none;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 10px;
+            justify-content: space-between;
+            background: #edeef0;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            width: 60%;
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'home' %}"><img src="{% static 'images/left-arrow.png' %}" alt="" height="25px" width="24px"></a>
+        <div class="header">
+            <h2>ToDo List</h2>
+            <img src="{% static 'images/check-list.png' %}" alt="" height="45px">
+        </div>
+               
+        {% for i in data2 %}
+        <form action="{% url 'pdelete' i.id %}" method="POST"> 
+            {% csrf_token %}           
+        <ul id="list-items" class="list-items">
+            <li>
+                <span>{{i.dtask}}</span>
+                <div class="image-container">
+                    <button type="submit" style="background: none; border: none; cursor: pointer;">
+                        <img src="{% static 'images/delete.png' %}" alt="Delete" height="18px" width="18px" align="center">
+                    </button>
+                </div>
+            </li>
+        </ul>
+        </form>
+        {% endfor %}
+    </div>
+</body>
+</html>
