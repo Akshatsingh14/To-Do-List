@@ -62,3 +62,10 @@ Follow these steps to set up the project locally:
 - Python (>=3.8 recommended)
 - Django (>=4.0)
 - Git
+
+### Steps
+
+1. Clone the repository:
+   
+   git clone https://github.com/your-username/todo-list-django.git
+   cd todo-list-django
