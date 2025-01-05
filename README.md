@@ -19,20 +19,20 @@ A fully functional To-Do List web application built using **Django**, providing 
 ---
 
 # Project Structure 📂
-
-todo-list-django/
-├── ToDO/                    # Main project folder
-├── app/                     # Main application folder
-│   ├── migrations/          # Database migrations
-│   ├── templates/           # HTML templates
-│   ├── views.py             # Views (Business logic)
-│   ├── models.py            # Database models
-│   └── urls.py              # URL configurations
-├── static/                  # Static files (CSS, Images)
-├── templates/               # Project-level HTML templates
-├── manage.py                # Django project management script
-├── db.sqlite3               # SQLite database file
-
+<br>
+todo-list-django/            <br>
+├── ToDO/                    # Main project folder               <br>
+├── app/                     # Main application folder           <br>
+│   ├── migrations/          # Database migrations               <br>
+│   ├── templates/           # HTML templates                    <br>
+│   ├── views.py             # Views (Business logic)            <br>
+│   ├── models.py            # Database models                   <br>
+│   └── urls.py              # URL configurations                <br>
+├── static/                  # Static files (CSS, Images)        <br>
+├── templates/               # Project-level HTML templates      <br>
+├── manage.py                # Django project management script  <br>
+├── db.sqlite3               # SQLite database file              
+<br>
 ---
 
 ## Screenshots 📸
@@ -107,19 +107,18 @@ Open your browser and navigate to http://127.0.0.1:8000
 
 # How It Works ⚙️
   
-  Authentication: 
-    Users can register and log in.
+  Authentication:   <br>
+    Users can register and log in.   <br>
     Each user has their own task list and history.
-
-  Task Management:
-    Users can add, edit, and delete tasks.
+<br>
+  Task Management:   <br>
+    Users can add, edit, and delete tasks.  <br>
     Deleted tasks are moved to the "History" section for later reference.
-
-  Search:
+<br>
+  Search: <br>
     Users can search for tasks by keywords.
-  
-  History:
-
+<br>  
+  History: <br>
     View and delete tasks from the history log.
 
 #Contributing 🤝
