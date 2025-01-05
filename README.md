@@ -18,6 +18,23 @@ A fully functional To-Do List web application built using **Django**, providing 
 
 ---
 
+# Project Structure 📂
+
+todo-list-django/
+├── ToDO/                    # Main project folder
+├── app/                     # Main application folder
+│   ├── migrations/          # Database migrations
+│   ├── templates/           # HTML templates
+│   ├── views.py             # Views (Business logic)
+│   ├── models.py            # Database models
+│   └── urls.py              # URL configurations
+├── static/                  # Static files (CSS, Images)
+├── templates/               # Project-level HTML templates
+├── manage.py                # Django project management script
+├── db.sqlite3               # SQLite database file
+
+---
+
 ## Screenshots 📸
 
 ### 1. Home Page
@@ -67,5 +84,43 @@ Follow these steps to set up the project locally:
 
 1. Clone the repository:
    
-   git clone https://github.com/your-username/todo-list-django.git
+   git clone https://github.com/Akshatsingh14/To-Do-List.git
    cd todo-list-django
+
+2. Set up a virtual environment:
+
+   python -m venv venv
+   venv\Scripts\activate  # Windows
+
+3. Install dependencies.
+
+4. Apply migrations to set up the database:
+
+   python manage.py makemigrations
+   python manage.py migrate
+
+5. Run the development server:
+
+   python manage.py runserver
+
+Open your browser and navigate to http://127.0.0.1:8000
+
+# How It Works ⚙️
+  
+  Authentication: 
+    Users can register and log in.
+    Each user has their own task list and history.
+
+  Task Management:
+    Users can add, edit, and delete tasks.
+    Deleted tasks are moved to the "History" section for later reference.
+
+  Search:
+    Users can search for tasks by keywords.
+  
+  History:
+
+    View and delete tasks from the history log.
+
+#Contributing 🤝
+Contributions are welcome! Feel free to submit a pull request or open an issue if you find a bug or have a suggestion.
