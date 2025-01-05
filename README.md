@@ -21,13 +21,15 @@ A fully functional To-Do List web application built using **Django**, providing 
 ## Screenshots 📸
 
 ### 1. Home Page
+![Screenshot 2025-01-05 100706](https://github.com/user-attachments/assets/6b96b257-6b5a-4210-ad62-f98f0c12cd5a)
+
 ![Screenshot 2024-12-17 123144](https://github.com/user-attachments/assets/71aba89e-ac8e-4757-9ad6-9492fc121ca3)
 
 ### 2. Add Task
 ![Screenshot 2024-12-17 092841](https://github.com/user-attachments/assets/f8c5118a-8e47-4504-be85-fb942acb8ddc)
 
 ### 3. Update Task
-![Update Task](#)
+![Screenshot 2025-01-05 101020](https://github.com/user-attachments/assets/cd174e1c-77ef-440f-902b-b437cbc0f040)
 
 ### 4. Task History
 ![Screenshot 2024-12-17 123252](https://github.com/user-attachments/assets/8197af9b-0678-4e55-b92f-8538a8200c9b)
