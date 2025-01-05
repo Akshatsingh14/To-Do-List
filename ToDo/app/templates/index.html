@@ -60,38 +60,47 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h2>ToDo List</h2>
-            <img src="{% static 'images/check-list.png' %}" alt="" height="45px">
-        </div>
-        <div class="todo-body" style="gap:10px">
-            <a href="{% url 'create' %}"><span>
-                <p>Create</p>
-                <img src="{% static 'images/plus.png' %}" alt="">
-            </span></a>
-            <a href="{% url 'hist' %}"><span>
-                <p>History</p>
-                <img src="{% static 'images/history.png' %}" alt="">
-            </span></a>
-            <form action="" method="GET">
-                {% csrf_token %}
-            <div class="search">
-                <input type="text" name="search" placeholder="Search Task"></input>
-                <button type="submit"><img src="{% static 'images/search.png' %}" alt="" 
-                    style="cursor: pointer; height: 30px; width: 30px;"></button>
+    {% include 'nav.html' %}
+    <section>
+        <div class="container">
+            <div class="header">
+                <h2>ToDo List</h2>
+                <img src="{% static 'images/check-list.png' %}" alt="" height="45px">
             </div>
-            </form>
+            <div class="todo-body" style="gap:10px">
+                <a href="{% url 'create' %}"><span>
+                    <p>Create</p>
+                    <img src="{% static 'images/plus.png' %}" alt="">
+                </span></a>
+                <a href="{% url 'hist' %}"><span>
+                    <p>History</p>
+                    <img src="{% static 'images/history.png' %}" alt="">
+                </span></a>
+                <form action="" method="GET">
+                    {% csrf_token %}
+                <div class="search">
+                    <input type="text" name="search" placeholder="Search Task"></input>
+                    <button type="submit"><img src="{% static 'images/search.png' %}" alt="" 
+                        style="cursor: pointer; height: 30px; width: 30px;"></button>
+                </div>
+                </form>
+            </div>
+            
+            {% for i in data %}
+            <ul id="list-items" class="list-items">
+                <li>
+                    <a href="{% url 'update' i.id %}">{{i.task}}</a>
+                    <!-- Form for Deleting Task -->
+                    <form action="{% url 'delete' pk1=i.id %}" method="POST" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" style="background: none; border: none; cursor: pointer;">
+                            <i id="del" class="fa-solid fa-trash"></i>
+                        </button>
+                    </form>
+                </li>
+            </ul>
+            {% endfor %}
         </div>
-        
-        {% for i in data %}            
-        <ul id="list-items" class="list-items">
-            <li>
-                <a href="{% url 'update' i.id %}">{{i.task}}</a>
-                <a href="{% url 'delete' i.id %}"><i id="del" class="fa-solid fa-trash"></i></a>
-            </li>
-        </ul>
-        {% endfor %}
-    </div>
+    </section>
 </body>
 </html>

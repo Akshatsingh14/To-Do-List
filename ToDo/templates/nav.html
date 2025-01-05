@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        header {
+        height: 5.7rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding-top: 1rem;
+        padding-right: 2rem;
+        }
+
+        .acc {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        }
+
+        .btn{
+        width: 7%;
+        height: 100%;
+        }
+
+        .btn button {
+        width: 95%;
+        height: 100%;
+        padding: 0.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: #3498db; /* A default color for the button */
+        color: white;
+        border: none;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn button:hover {
+        transform: scale(1.1); /* Slightly increase size */
+        background-color: #2980b9; /* Change color on hover */
+        }
+</style>
+</head>
+<body>
+    <header>
+        <div class="acc">
+            <p style="text-transform: capitalize; font-size: 24px; font-weight: bold; ">Welcome {{user}}!</p>
+        </div>
+        <div class="btn">
+            <a href="{% url 'log_out' %}">
+                <button type="submit">Logout</button>
+            </a>
+        </div>
+    </header>
+</body>
+</html>

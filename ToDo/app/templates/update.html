@@ -44,21 +44,25 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="{% url 'home' %}"><img src="{% static 'images/left-arrow.png' %}" alt="" height="25px" width="24px"></a>
-        <div class="header">
-            <h2>ToDo List</h2>
-            <img src="{% static 'images/check-list.png' %}" alt="" height="45px">
-        </div>
-        <form action="{% url 'update' data1.id %}" method="POST">
-            {% csrf_token %}
-        <div class="todo-body">
-            <input type="text" class="todo-input" placeholder="Add Your Task" name="task" value="{{data1.task}}"/>
-            <div>
-                <button type="submit" name="action" value="update">Update</button>
+    {% include 'nav.html' %}
+
+    <section>
+        <div class="container">
+            <a href="{% url 'home' %}"><img src="{% static 'images/left-arrow.png' %}" alt="" height="25px" width="24px"></a>
+            <div class="header">
+                <h2>ToDo List</h2>
+                <img src="{% static 'images/check-list.png' %}" alt="" height="45px">
             </div>
+            <form action="{% url 'update' data1.id %}" method="POST">
+                {% csrf_token %}
+            <div class="todo-body">
+                <input type="text" class="todo-input" placeholder="Add Your Task" name="task" value="{{data1.task}}"/>
+                <div>
+                    <button type="submit" name="action" value="update">Update</button>
+                </div>
+            </div>
+            </form>
         </div>
-        </form>
-    </div>
+    </section>
 </body>
 </html>
